@@ -1,0 +1,438 @@
+:root {
+  --ink: #1b5a56;
+  --ink-soft: #5d7e78;
+  --paper: #fffaf5;
+  --cream: #fffefc;
+  --coral: #ff8b6a;
+  --coral-soft: #ffd8cc;
+  --gold: #f7c86d;
+  --line: rgba(27, 90, 86, 0.12);
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", "Segoe UI", sans-serif;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fffaf5 0%, #fff4ee 100%);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+/* Hiệu ứng hạt giấy nhẹ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* Layout Wrapper */
+.invitation-page {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, 100% - 32px);
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+/* Header */
+.page-heading {
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-heading h1 em {
+  color: var(--coral);
+  font-style: normal;
+}
+
+/* Two Blocks Layout */
+.invitation-blocks {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.invitation-block {
+  min-width: 0;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 36px -12px rgba(27, 90, 86, 0.14);
+}
+
+/* Block 1: Info */
+.info-block {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #1f6b65 0%, #154d49 100%);
+  color: var(--cream);
+}
+
+.block-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.block-index {
+  color: var(--coral);
+  font: 600 1.2rem var(--serif);
+}
+
+.section-label {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.info-block h2,
+.route-block h2 {
+  margin: 0 0 28px;
+  font: 500 clamp(2rem, 3.5vw, 3rem)/1.15 var(--serif);
+  letter-spacing: -0.02em;
+}
+
+.info-block h2 em {
+  color: var(--coral-soft);
+  font-style: normal;
+}
+
+.event-details {
+  display: grid;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+.event-detail {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(245, 195, 175, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--coral-soft);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.event-detail div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.detail-label {
+  color: var(--coral-soft);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.event-detail strong {
+  font: 600 1.25rem var(--serif);
+  color: #fff;
+}
+
+.event-detail span:last-child {
+  color: #d1ded9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(245, 195, 175, 0.12);
+  color: var(--coral-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(245, 195, 175, 0.25);
+  transition: all 0.2s ease;
+}
+
+.contact-link:hover,
+.contact-link:active {
+  background: var(--coral);
+  color: #fff;
+  border-color: var(--coral);
+}
+
+/* Block 2: Route */
+.route-block {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  border: 1px solid var(--line);
+}
+
+.route-copy {
+  margin: -8px 0 20px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+/* Khung chứa ảnh bản đồ */
+.map-visual-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(23, 63, 58, 0.08);
+  border: 1px solid var(--line);
+  background: #f7f9f8;
+}
+
+/* Ảnh sơ đồ HUST */
+.campus-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Canh tâm vào khu vực nhà C1 - C2 */
+  object-position: center 42%;
+  display: block;
+}
+
+/* Điểm ghim định vị C2 trên sơ đồ */
+/* Tọa độ chuẩn của tòa nhà C2 trên ảnh sơ đồ */
+.c2-marker {
+  position: absolute;
+  top: 35%; /* Di chuyển từ khu C4/C5 lên ngang tầm nhà C2 */
+  left: 23.5%; /* Đưa từ giữa sang cánh trái - đúng vị trí khối nhà C2 */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 3;
+}
+
+/* Nếu có media query ở cuối file styles.css, hãy đồng bộ lại: */
+@media (max-width: 768px) {
+  .c2-marker {
+    top: 35%;
+    left: 23.5%;
+  }
+}
+
+/* Hiệu ứng nhịp đập tròn đỏ */
+.pin-pulse {
+  width: 18px;
+  height: 18px;
+  background-color: var(--coral);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(233, 121, 91, 0.7);
+  animation: pulse-ring 1.8s infinite;
+}
+
+.marker-tag {
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(233, 121, 91, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(233, 121, 91, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(233, 121, 91, 0);
+  }
+}
+
+/* Tối ưu hiển thị trên điện thoại */
+@media (max-width: 768px) {
+  .map-visual-wrapper {
+    width: calc(100% - 40px);
+  }
+}
+
+.route-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.primary-button {
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  color: #fff;
+  background: var(--ink);
+  font: 600 0.88rem var(--sans);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(23, 63, 58, 0.2);
+  transition: all 0.2s ease;
+}
+
+.primary-button:active {
+  transform: scale(0.98);
+  background: var(--coral);
+}
+
+.text-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  gap: 4px;
+}
+
+.text-link:active {
+  opacity: 0.7;
+}
+
+.location-status {
+  min-height: 20px;
+  margin-top: 8px;
+  color: var(--coral);
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   Mobile Styles (< 768px)
+   ======================================================== */
+@media (max-width: 768px) {
+  .invitation-page {
+    width: 100%;
+    padding: 32px 18px 56px;
+  }
+
+  .page-heading {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .page-heading h1 {
+    font-size: 2.15rem;
+    line-height: 1.2;
+  }
+
+  .invitation-blocks {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .invitation-block {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .block-heading {
+    margin-bottom: 18px;
+  }
+
+  .info-block h2,
+  .route-block h2 {
+    margin-bottom: 22px;
+    font-size: 1.85rem;
+  }
+
+  .event-details {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .event-detail {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .event-detail strong {
+    font-size: 1.15rem;
+  }
+
+  .contact-link {
+    width: 100%;
+    min-height: 48px;
+  }
+}

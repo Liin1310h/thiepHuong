@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f3a" />
+    <meta
+      name="description"
+      content="Thiệp mời dự lễ tốt nghiệp tại Hội trường A2, Học viện Bưu chính viễn thông."
+    />
+    <title>Lời mời dự lễ tốt nghiệp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="invitation-page">
+      <header class="page-heading">
+        <p class="eyebrow">Một lời mời nhỏ cho ngày thật đặc biệt</p>
+        <h1 id="page-title">
+          Mình rất mong được gặp bạn<br /><em>ở lễ tốt nghiệp.</em>
+        </h1>
+      </header>
+
+      <div class="invitation-blocks">
+        <section
+          class="invitation-block info-block"
+          aria-labelledby="event-title"
+        >
+          <div class="block-heading">
+            <span class="block-index">01</span>
+            <p class="section-label">Thông tin buổi lễ</p>
+          </div>
+          <div class="event-details">
+            <div class="event-detail">
+              <span class="detail-icon" aria-hidden="true">◷</span>
+              <div>
+                <span class="detail-label">Thời gian</span><strong>10:30</strong
+                ><span>Thứ bảy, ngày 26 tháng 09 năm 2026</span>
+              </div>
+            </div>
+            <div class="event-detail">
+              <span class="detail-icon" aria-hidden="true">⌖</span>
+              <div>
+                <span class="detail-label">Địa điểm</span
+                ><strong>Hội trường A2</strong
+                ><span
+                  >Học viện Bưu chính viễn thông<br />96A, Trần Phú, Hà Đông, Hà
+                  Nội</span
+                >
+              </div>
+            </div>
+          </div>
+          <a class="contact-link" href="tel:0965235806"
+            >Liên hệ: Hương - 0965235806</a
+          >
+        </section>
+
+        <section
+          class="invitation-block route-block"
+          aria-labelledby="route-title"
+        >
+          <div class="block-heading">
+            <span class="block-index">02</span>
+            <p class="section-label">Đường đi</p>
+          </div>
+          <p class="route-copy">
+            Bạn có thể mở bản đồ để xem vị trí, hoặc bật định vị để nhận hướng
+            dẫn đường đi từ chỗ của bạn.
+          </p>
+          <!-- Khung hiển thị ảnh sơ đồ Bách Khoa -->
+          <div class="map-visual-wrapper">
+            <img
+              src="bando.jpg"
+              alt="Sơ đồ Học viện Bưu chính viễn thông"
+              class="campus-map-img"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="route-actions">
+            <!-- Nút dẫn đường thẳng đến Hội trường A2 -->
+            <a
+              class="primary-button"
+              id="directions-button"
+              href="https://www.google.com/maps/dir/?api=1&destination=H%E1%BB%99i+tr%C6%B0%E1%BB%9Dng+A2+H%E1%BB%8Dc+vi%E1%BB%87n+B%C6%B0u+ch%C3%ADnh+Vi%E1%BB%85n+th%C3%B4ng+H%C3%A0+N%E1%BB%99i"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Dẫn đường từ vị trí của bạn <span aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Mở vị trí Hội trường A2 trên Google Maps -->
+            <a
+              class="text-link"
+              href="https://www.google.com/maps/search/?api=1&query=H%E1%BB%99i+tr%C6%B0%E1%BB%9Dng+A2+H%E1%BB%8Dc+vi%E1%BB%87n+B%C6%B0u+ch%C3%ADnh+Vi%E1%BB%85n+th%C3%B4ng+H%C3%A0+N%E1%BB%99i"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mở bản đồ <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p
+            class="location-status"
+            id="location-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
